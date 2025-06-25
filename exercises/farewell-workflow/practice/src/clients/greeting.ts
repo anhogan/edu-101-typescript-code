@@ -5,7 +5,7 @@ import { greeting } from '../workflows';
 async function run() {
   const client = new Client();
   const result = await client.workflow.execute(greeting, {
-    args: ['Tina'],
+    args: ['Amanda'],
     taskQueue: 'translation-tasks',
     workflowId: 'workflow-' + randomUUID(),
   });

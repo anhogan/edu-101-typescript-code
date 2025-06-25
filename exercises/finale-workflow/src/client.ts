@@ -1,6 +1,6 @@
-import { Connection, Client } from '@temporalio/client';
-import { CertificateGeneratorWorkflow } from './workflows';
+import { Client, Connection } from '@temporalio/client';
 import { uuid4 } from '@temporalio/workflow';
+import { CertificateGeneratorWorkflow } from './workflows';
 
 async function run() {
   const connection = await Connection.connect();
@@ -11,7 +11,7 @@ async function run() {
 
   const handle = await client.workflow.start(CertificateGeneratorWorkflow, {
     // TO DO: Change 'Maxim Fateev' to your name
-    args: ['Maxim Fateev'],
+    args: ['Amanda McQueen'],
     taskQueue: 'generate-certificate-taskqueue',
     workflowId: 'cert-generator-workflow-' + uuid4(),
   });
